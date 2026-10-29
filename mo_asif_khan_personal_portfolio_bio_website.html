@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo Asif Khan (Asif Shravasti) | Designer & Laser Fabrication Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#f59e0b',
+                            cyan: '#06b6d4',
+                            dark: '#0f172a',
+                            card: '#1e293b',
+                            accent: '#3b82f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-slate-950 min-h-screen flex flex-col justify-between">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-cyan-500 p-0.5 transition-transform duration-300 group-hover:scale-105">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-bold text-amber-400">
+                        AK
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg tracking-wider text-slate-100 group-hover:text-amber-400 transition-colors">Mo Asif Khan</span>
+                    <span class="text-xs text-amber-500 font-medium">@asifshravasti</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-amber-400 transition-colors">About</a>
+                <a href="#portfolio" class="hover:text-amber-400 transition-colors">Portfolio</a>
+                <a href="#skills" class="hover:text-amber-400 transition-colors">Skills</a>
+                <a href="#bucketlist" class="hover:text-amber-400 transition-colors">Bucket List</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold transition-all duration-300 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40">Contact Me</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2.5 text-slate-300 hover:text-amber-400 rounded-lg focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-4 space-y-4">
+            <a href="#about" class="block text-slate-300 hover:text-amber-400 transition-colors py-2">About Me</a>
+            <a href="#portfolio" class="block text-slate-300 hover:text-amber-400 transition-colors py-2">Portfolio & Services</a>
+            <a href="#skills" class="block text-slate-300 hover:text-amber-400 transition-colors py-2">Skills & Tools</a>
+            <a href="#bucketlist" class="block text-slate-300 hover:text-amber-400 transition-colors py-2">Bucket List</a>
+            <a href="#contact" class="block text-center py-2.5 rounded-lg bg-amber-500 text-slate-950 font-semibold">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow pt-20">
+
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <!-- Neon Glow Background Elements -->
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+                <!-- Location Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-medium animate-pulse">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Based in Riyadh, Saudi Arabia | Shravasti, India</span>
+                </div>
+
+                <!-- Title & Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none text-slate-100">
+                    Mo Asif Khan <br>
+                    <span class="text-gradient-gold">(Asif Shravasti)</span>
+                </h1>
+
+                <p class="text-lg sm:text-2xl font-light text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                    Graphic Designer & <span class="text-cyan-400 font-normal">Laser Cutting / Engraving Specialist</span> with expertise in precision vector art, CO2 & fiber laser fabrication.
+                </p>
+
+                <!-- Action CTA Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                    <a href="#portfolio" class="px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-layer-group mr-2"></i> View Portfolio
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-xl glass-panel text-slate-200 hover:text-cyan-400 hover:border-cyan-500/50 font-semibold transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Get In Touch
+                    </a>
+                </div>
+
+                <!-- Fast Info Badges -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 text-left max-w-4xl mx-auto">
+                    <div class="glass-panel p-4 rounded-xl border-l-4 border-amber-500">
+                        <p class="text-xs text-slate-400 font-medium">Core Expertise</p>
+                        <p class="text-sm sm:text-base font-semibold text-slate-200 mt-1">Vector & Laser Cut Design</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border-l-4 border-cyan-500">
+                        <p class="text-xs text-slate-400 font-medium">Primary Tool</p>
+                        <p class="text-sm sm:text-base font-semibold text-slate-200 mt-1">CorelDRAW & Fusion 360</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border-l-4 border-amber-500">
+                        <p class="text-xs text-slate-400 font-medium">Specialization</p>
+                        <p class="text-sm sm:text-base font-semibold text-slate-200 mt-1">CO2 & Fiber Lasers</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border-l-4 border-cyan-500">
+                        <p class="text-xs text-slate-400 font-medium">Passions</p>
+                        <p class="text-sm sm:text-base font-semibold text-slate-200 mt-1">Tech & Expeditions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <!-- Visual Avatar / Badge -->
+                    <div class="w-full md:w-5/12 flex justify-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+                            <div class="relative w-72 h-80 sm:w-80 sm:h-96 bg-slate-950 rounded-2xl p-6 flex flex-col justify-between border border-slate-800">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs text-amber-400 font-mono">ASIF_PROFILE_DATA</span>
+                                    <i class="fa-solid fa-microchip text-slate-600"></i>
+                                </div>
+                                <div class="text-center py-6">
+                                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-amber-500/20 to-cyan-500/20 border-2 border-amber-500/50 flex items-center justify-center text-4xl text-amber-400 mb-4">
+                                        <i class="fa-solid fa-user-gear"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-100">Mo Asif Khan</h3>
+                                    <p class="text-xs text-cyan-400 mt-1">Precision Manufacturing & Design</p>
+                                </div>
+                                <div class="space-y-2 border-t border-slate-800 pt-4 text-xs text-slate-400">
+                                    <div class="flex justify-between">
+                                        <span>Identity:</span>
+                                        <span class="text-slate-200">Asif Shravasti</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Location:</span>
+                                        <span class="text-slate-200">Riyadh, KSA</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Focus:</span>
+                                        <span class="text-slate-200">Digital Vector Art & Lasers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Bio -->
+                    <div class="w-full md:w-7/12 space-y-6">
+                        <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider border border-cyan-500/20">
+                            About Mo Asif Khan
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-slate-100">
+                            Bridging Digital Design & Physical Fabrication
+                        </h2>
+                        <p class="text-slate-300 leading-relaxed">
+                            Hello! I'm <strong class="text-amber-400">Mo Asif Khan</strong>, widely known as <strong class="text-amber-400">Asif Shravasti</strong>. I am a dedicated Graphic Designer and Laser Cutting/Engraving Specialist with a deep passion for turn-key vector artwork and precise physical crafting.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            My day-to-day expertise revolves around mastering software like <strong class="text-cyan-400">CorelDRAW</strong> and <strong class="text-cyan-400">Autodesk Fusion 360</strong> to engineer detailed vectors optimized specifically for **CO2 laser cutting** and **Fiber laser engraving** machines. From intricate acrylic cutting and metal surface marking to custom 3D parametric CAD models, I transform creative ideas into physical reality.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            Beyond design and manufacturing, I am driven by modern technology, expanding my professional qualifications (HSE/Safety standards), and exploring world cultures—with a dream motorcycle road trip planned across the Himalayan routes of Ladakh and Leh.
+                        </p>
+
+                        <!-- Highlights List -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="flex items-center gap-3 text-sm text-slate-200">
+                                <i class="fa-solid fa-circle-check text-amber-500"></i>
+                                <span>CorelDRAW Master & Vectorizer</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-200">
+                                <i class="fa-solid fa-circle-check text-amber-500"></i>
+                                <span>CO2 & Fiber Laser Calibration</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-200">
+                                <i class="fa-solid fa-circle-check text-amber-500"></i>
+                                <span>Parametric 3D CAD Modeling</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-200">
+                                <i class="fa-solid fa-circle-check text-amber-500"></i>
+                                <span>HSE & Industrial Safety Mindset</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio / Services Section -->
+        <section id="portfolio" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <div class="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider border border-amber-500/20">
+                        Craftsmanship & Services
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100">Featured Specializations</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Explore key areas of digital design, precision cutting, metal engraving, and 3D prototyping.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3" id="portfolio-filters">
+                    <button class="filter-btn active px-5 py-2 rounded-lg text-sm font-semibold bg-amber-500 text-slate-950 transition-all" data-filter="all">All Projects</button>
+                    <button class="filter-btn px-5 py-2 rounded-lg text-sm font-semibold glass-panel text-slate-300 hover:text-amber-400 transition-all" data-filter="vector">Vector Design</button>
+                    <button class="filter-btn px-5 py-2 rounded-lg text-sm font-semibold glass-panel text-slate-300 hover:text-amber-400 transition-all" data-filter="co2">CO2 Laser Cutting</button>
+                    <button class="filter-btn px-5 py-2 rounded-lg text-sm font-semibold glass-panel text-slate-300 hover:text-amber-400 transition-all" data-filter="fiber">Fiber Engraving</button>
+                    <button class="filter-btn px-5 py-2 rounded-lg text-sm font-semibold glass-panel text-slate-300 hover:text-amber-400 transition-all" data-filter="3d">3D & CAD</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="portfolio-grid">
+                    
+                    <!-- Card 1 -->
+                    <div class="portfolio-item vector glass-panel rounded-2xl p-6 border border-slate-800 hover:border-amber-500/40 transition-all duration-300 group">
+                        <div class="h-48 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 mb-6 group-hover:bg-slate-900 transition-colors relative overflow-hidden">
+                            <i class="fa-solid fa-bezier-curve text-5xl text-amber-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-slate-400 font-mono">DXF / SVG / CDR Formats</span>
+                            <div class="absolute top-3 right-3 text-xs bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded-full font-semibold">Vector Art</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-amber-400 transition-colors">Precision Vector Artwork & Tracing</h3>
+                        <p class="text-sm text-slate-400 mt-2">Custom high-resolution vectorization, node optimization, zero-overlap line preparation for error-free laser machine pathways.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="portfolio-item co2 glass-panel rounded-2xl p-6 border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 group">
+                        <div class="h-48 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 mb-6 group-hover:bg-slate-900 transition-colors relative overflow-hidden">
+                            <i class="fa-solid fa-border-all text-5xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-slate-400 font-mono">Acrylic, MDF, Wood & Leather</span>
+                            <div class="absolute top-3 right-3 text-xs bg-cyan-500/20 text-cyan-400 px-2.5 py-1 rounded-full font-semibold">CO2 Laser</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">CO2 Laser Cutting & Architectural Models</h3>
+                        <p class="text-sm text-slate-400 mt-2">Intricate pattern cuts, acrylic signage, wooden decorative panels, and precise interlocking joint designs for fast assembly.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="portfolio-item fiber glass-panel rounded-2xl p-6 border border-slate-800 hover:border-amber-500/40 transition-all duration-300 group">
+                        <div class="h-48 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 mb-6 group-hover:bg-slate-900 transition-colors relative overflow-hidden">
+                            <i class="fa-solid fa-cube text-5xl text-amber-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-slate-400 font-mono">Stainless Steel, Brass & Anodized Metal</span>
+                            <div class="absolute top-3 right-3 text-xs bg-amber-500/20 text-amber-400 px-2.5 py-1 rounded-full font-semibold">Fiber Engraving</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-amber-400 transition-colors">Fiber Laser Deep Metal Engraving</h3>
+                        <p class="text-sm text-slate-400 mt-2">High-frequency fiber laser marking for industrial metal tags, personalized jewelry, tool branding, and detailed graphic etching.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="portfolio-item 3d glass-panel rounded-2xl p-6 border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 group">
+                        <div class="h-48 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 mb-6 group-hover:bg-slate-900 transition-colors relative overflow-hidden">
+                            <i class="fa-solid fa-shapes text-5xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-slate-400 font-mono">Fusion 360 & 3D Fabrication</span>
+                            <div class="absolute top-3 right-3 text-xs bg-cyan-500/20 text-cyan-400 px-2.5 py-1 rounded-full font-semibold">3D & CAD</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">Functional 3D CAD Prototyping</h3>
+                        <p class="text-sm text-slate-400 mt-2">Designing custom 3D enclosures, functional mechanical parts, and preparation of ready-to-print STL files for 3D printers.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Tools Section -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider border border-cyan-500/20">
+                        Technical Expertise
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100">Skills & Tools Mastery</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">A breakdown of software tools, hardware operations, and professional capabilities.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Progress Bar Skill Group -->
+                    <div class="glass-panel p-8 rounded-2xl border border-slate-800 space-y-6">
+                        <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
+                            <i class="fa-solid fa-laptop-code"></i> Software Proficiency
+                        </h3>
+
+                        <!-- Skill 1 -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm font-medium">
+                                <span class="text-slate-200">CorelDRAW (Vector Master)</span>
+                                <span class="text-amber-400">95%</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                                <div class="h-full bg-gradient-to-r from-amber-500 to-amber-400 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm font-medium">
+                                <span class="text-slate-200">Laser Machine Control (RDWorks / LightBurn)</span>
+                                <span class="text-cyan-400">90%</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                                <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm font-medium">
+                                <span class="text-slate-200">Autodesk Fusion 360 (3D CAD)</span>
+                                <span class="text-amber-400">80%</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                                <div class="h-full bg-gradient-to-r from-amber-500 to-amber-400 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm font-medium">
+                                <span class="text-slate-200">Graphic Vectorization & Tracing</span>
+                                <span class="text-cyan-400">95%</span>
+                            </div>
+                            <div class="w-full h-2.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                                <div class="h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hardware & Industry Badges -->
+                    <div class="glass-panel p-8 rounded-2xl border border-slate-800 space-y-6">
+                        <h3 class="text-lg font-bold text-cyan-400 flex items-center gap-2">
+                            <i class="fa-solid fa-gears"></i> Hardware & Industrial Skills
+                        </h3>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
+                                <i class="fa-solid fa-fire-flame-curved text-amber-400 text-2xl mb-2"></i>
+                                <h4 class="text-sm font-semibold text-slate-200">CO2 Laser Cutting</h4>
+                                <p class="text-xs text-slate-500 mt-1">Lens focus, speed & power optimization</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
+                                <i class="fa-solid fa-bolt text-cyan-400 text-2xl mb-2"></i>
+                                <h4 class="text-sm font-semibold text-slate-200">Fiber Laser Engraving</h4>
+                                <p class="text-xs text-slate-500 mt-1">Frequency, duty cycle & metal etching</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
+                                <i class="fa-solid fa-shield-halved text-cyan-400 text-2xl mb-2"></i>
+                                <h4 class="text-sm font-semibold text-slate-200">HSE & Safety Standards</h4>
+                                <p class="text-xs text-slate-500 mt-1">OSHA/NEBOSH guidelines & workshop safety</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
+                                <i class="fa-solid fa-print text-amber-400 text-2xl mb-2"></i>
+                                <h4 class="text-sm font-semibold text-slate-200">3D Printing Prep</h4>
+                                <p class="text-xs text-slate-500 mt-1">Slicing STL, mesh repair & infill tuning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bucket List / Aspirations Section -->
+        <section id="bucketlist" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <div class="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider border border-amber-500/20">
+                        Life Goals & Future Milestones
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100">Dream Bucket List</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">A glimpse into my aspirations across travel expeditions, tech growth, and career expansion.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Bucket Item 1 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-amber-500/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-bold text-slate-100">Ladakh & Leh Himalayan Bike Expedition</h3>
+                            <p class="text-sm text-slate-400">Road trip from Shravasti to Leh, Srinagar, and Manali through high mountain passes on TVS Apache RTR 160.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bucket Item 2 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-cyan-500/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-plane"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-bold text-slate-100">Global Cultural Explorations</h3>
+                            <p class="text-sm text-slate-400">Discovering historic landscapes across Japan (departing Lucknow), Sri Lanka, Vietnam, and Baku (Azerbaijan).</p>
+                        </div>
+                    </div>
+
+                    <!-- Bucket Item 3 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-cyan-500/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-bold text-slate-100">Attend LEAP & DeepFest Tech Summits</h3>
+                            <p class="text-sm text-slate-400">Immersing in world-leading Artificial Intelligence and tech expos to stay at the cutting edge of modern innovations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bucket Item 4 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 flex gap-4 items-start hover:border-amber-500/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 text-xl font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-bold text-slate-100">Higher Education & HSE Certification</h3>
+                            <p class="text-sm text-slate-400">Completing BA distance education (IGNOU/AMU Online) alongside earning safety certifications like OSHA or NEBOSH.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <div class="text-center space-y-4">
+                    <div class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-wider border border-cyan-500/20">
+                        Get In Touch
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100">Let's Work Together</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Have a vector artwork project, laser cutting requirement, or custom job? Drop a message!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Contact Info Card -->
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-6 md:col-span-1">
+                        <h3 class="text-xl font-bold text-amber-400">Contact Details</h3>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-950 flex items-center justify-center text-amber-400 shrink-0">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500">Name</p>
+                                    <p class="font-medium text-slate-200">Mo Asif Khan (Asif Shravasti)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-950 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500">Current Base</p>
+                                    <p class="font-medium text-slate-200">Riyadh, Saudi Arabia</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-950 flex items-center justify-center text-amber-400 shrink-0">
+                                    <i class="fa-solid fa-house-user"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500">Hometown</p>
+                                    <p class="font-medium text-slate-200">Shravasti, Uttar Pradesh, India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800">
+                            <p class="text-xs text-slate-400 mb-3">Connect on Social Profiles:</p>
+                            <div class="flex gap-3">
+                                <a href="#" class="w-10 h-10 rounded-lg bg-slate-950 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-colors border border-slate-800" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-lg bg-slate-950 text-slate-300 hover:text-cyan-400 flex items-center justify-center transition-colors border border-slate-800" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-lg bg-slate-950 text-slate-300 hover:text-amber-400 flex items-center justify-center transition-colors border border-slate-800" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Contact Form -->
+                    <div class="glass-panel p-8 rounded-2xl border border-slate-800 md:col-span-2">
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label for="name" class="text-xs font-semibold text-slate-300">Your Name</label>
+                                    <input type="text" id="name" required placeholder="Enter full name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-amber-500 transition-colors">
+                                </div>
+                                <div class="space-y-1">
+                                    <label for="email" class="text-xs font-semibold text-slate-300">Email Address</label>
+                                    <input type="email" id="email" required placeholder="name@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-amber-500 transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label for="subject" class="text-xs font-semibold text-slate-300">Subject / Service Needed</label>
+                                <select id="subject" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-amber-500 transition-colors">
+                                    <option>Vector Artwork Design</option>
+                                    <option>CO2 Laser Cutting Design</option>
+                                    <option>Fiber Laser Engraving Project</option>
+                                    <option>3D Parametric CAD Model</option>
+                                    <option>General Inquiry / Collaboration</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label for="message" class="text-xs font-semibold text-slate-300">Message</label>
+                                <textarea id="message" rows="4" required placeholder="Describe your project details..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-amber-500 transition-colors resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold transition-all shadow-lg shadow-amber-500/20">
+                                Send Message
+                            </button>
+
+                            <!-- Custom Notification Container -->
+                            <div id="form-notification" class="hidden p-3 rounded-lg text-xs font-semibold text-center mt-3"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-8 px-4 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Mo Asif Khan (Asif Shravasti). All rights reserved.</p>
+            <p class="flex items-center gap-1">
+                Designed for <span class="text-amber-400">Vector & Laser Excellence</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Category Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-amber-500', 'text-slate-950');
+                    b.classList.add('glass-panel', 'text-slate-300');
+                });
+
+                // Add active styling to clicked button
+                btn.classList.add('bg-amber-500', 'text-slate-950');
+                btn.classList.remove('glass-panel', 'text-slate-300');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact Form Handling (Without alert)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const notification = document.getElementById('form-notification');
+            const name = document.getElementById('name').value;
+
+            notification.classList.remove('hidden', 'bg-red-500/20', 'text-red-400');
+            notification.classList.add('bg-emerald-500/20', 'text-emerald-400', 'border', 'border-emerald-500/30');
+            notification.textContent = `Thank you, ${name}! Your message has been prepared. Mo Asif Khan will get back to you soon.`;
+
+            document.getElementById('contact-form').reset();
+
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
