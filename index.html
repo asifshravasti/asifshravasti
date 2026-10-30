@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mo Asif Khan | Portfolio & GitHub README Generator</title>
+    <title>Mo Asif Khan | Precision Laser Operator & Graphic Designer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,542 +12,655 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#0b0f19',
-                        cardBg: '#131c2e',
-                        accentBlue: '#3b82f6',
-                        accentCyan: '#06b6d4',
+                        obsidian: '#0a0c10',
+                        glassBg: 'rgba(18, 22, 31, 0.7)',
+                        glassBorder: 'rgba(255, 255, 255, 0.08)',
+                        neonCyan: '#00f2fe',
+                        neonBlue: '#4facfe',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { opacity: '0.3', transform: 'scale(0.98)' },
+                            '100%': { opacity: '0.6', transform: 'scale(1.02)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
                     }
                 }
             }
         }
     </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        /* Custom scrollbar */
+        body { font-family: 'Outfit', sans-serif; background-color: #0a0c10; color: #e2e8f0; }
+        .glass-card {
+            background: rgba(18, 24, 38, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 242, 254, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.15);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border {
+            position: relative;
+        }
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(0,242,254,0.4), rgba(79,172,254,0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        /* Custom Ambient Background Grid */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-track { background: #0a0c10; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        ::-webkit-scrollbar-thumb:hover { background: #00f2fe; }
     </style>
 </head>
-<body class="bg-darkBg text-gray-100 min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
+<body class="relative bg-obsidian text-slate-200 min-h-screen overflow-x-hidden antialiased bg-grid-pattern selection:bg-cyan-500 selection:text-black">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-gray-800">
+    <!-- Ambient Glowing Orbs -->
+    <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none animate-pulse-glow z-0"></div>
+    <div class="fixed bottom-10 right-10 w-[450px] h-[450px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-obsidian/80 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/20">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition duration-300">
                     AK
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg leading-tight tracking-wide">Mo Asif Khan</h1>
-                    <p class="text-xs text-blue-400 font-medium">Graphic Designer & Laser Operator</p>
+                    <span class="font-extrabold text-lg tracking-tight text-white block group-hover:text-cyan-400 transition">Mo Asif Khan</span>
+                    <span class="text-[11px] text-cyan-400 font-mono tracking-wider uppercase">Laser & Design Pro</span>
                 </div>
-            </div>
-            
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
-                <a href="#about" class="hover:text-blue-400 transition">About</a>
-                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
-                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
-                <a href="#education" class="hover:text-blue-400 transition">Education</a>
-                <a href="#travel" class="hover:text-blue-400 transition">Travel</a>
-                <a href="#github-generator" class="text-blue-400 hover:text-blue-300 transition flex items-center gap-1.5 bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20">
-                    <i class="fab fa-github"></i> GitHub README
-                </a>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
+                <a href="#travel" class="hover:text-cyan-400 transition-colors">Travel</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
             </nav>
 
-            <!-- Mobile Menu Toggle Button -->
-            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2 rounded-lg bg-cardBg border border-gray-800">
+            <!-- Hire Me CTA Button -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#contact" class="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-xs tracking-wider uppercase text-black bg-gradient-to-r from-cyan-400 to-blue-500 hover:shadow-lg hover:shadow-cyan-500/25 transition duration-300 active:scale-95">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-toggle" class="md:hidden text-slate-300 hover:text-white p-2.5 rounded-xl glass-card border border-white/10">
                 <i class="fas fa-bars text-lg"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-6 py-4 space-y-3">
-            <a href="#about" class="block text-sm text-gray-300 hover:text-blue-400">About</a>
-            <a href="#skills" class="block text-sm text-gray-300 hover:text-blue-400">Skills</a>
-            <a href="#experience" class="block text-sm text-gray-300 hover:text-blue-400">Experience</a>
-            <a href="#education" class="block text-sm text-gray-300 hover:text-blue-400">Education</a>
-            <a href="#travel" class="block text-sm text-gray-300 hover:text-blue-400">Travel</a>
-            <a href="#github-generator" class="block text-sm text-blue-400 font-semibold"><i class="fab fa-github"></i> GitHub README Generator</a>
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#about" class="block text-slate-300 hover:text-cyan-400 text-sm font-medium">About</a>
+            <a href="#skills" class="block text-slate-300 hover:text-cyan-400 text-sm font-medium">Skills</a>
+            <a href="#experience" class="block text-slate-300 hover:text-cyan-400 text-sm font-medium">Experience</a>
+            <a href="#education" class="block text-slate-300 hover:text-cyan-400 text-sm font-medium">Education</a>
+            <a href="#travel" class="block text-slate-300 hover:text-cyan-400 text-sm font-medium">Travel</a>
+            <a href="#contact" class="block text-cyan-400 text-sm font-semibold">Contact Me →</a>
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-28">
 
         <!-- Hero Section -->
-        <section id="hero" class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-cardBg via-[#101726] to-[#0d1424] border border-gray-800 p-8 sm:p-12 lg:p-16 shadow-2xl">
-            <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div class="lg:col-span-8 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold tracking-wider uppercase">
-                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> Riyadh, Saudi Arabia
+        <section id="hero" class="relative pt-6 sm:pt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Intro Content -->
+                <div class="lg:col-span-7 space-y-8">
+                    
+                    <!-- Location & Status Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-cyan-500/30 text-xs font-semibold tracking-wider text-cyan-300">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+                        <i class="fas fa-location-dot text-cyan-400"></i> Riyadh, Saudi Arabia
                     </div>
-                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
-                        Hi, I'm <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Mo Asif Khan</span>
-                    </h2>
-                    <p class="text-xl sm:text-2xl font-medium text-gray-300">
-                        Graphic Designer & Precision Laser Machine Operator
+
+                    <!-- Main Headline -->
+                    <div class="space-y-3">
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Mo Asif Khan
+                        </h1>
+                        <h2 class="text-2xl sm:text-3xl font-bold gradient-text">
+                            Graphic Designer & Precision Laser Machine Operator
+                        </h2>
+                    </div>
+
+                    <!-- Brief Description -->
+                    <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+                        Bridging high-precision vector design with physical laser fabrication. Expert in operating CO2 and Fiber laser systems, RDWorks, EzCad2, and CorelDRAW to craft bespoke signage, promotional items, and technical artwork.
                     </p>
-                    <p class="text-gray-400 text-sm sm:text-base max-w-2xl leading-relaxed">
-                        Experienced professional specializing in high-precision vector design, CO2 & Fiber laser engraving/cutting on acrylic, wood, and metal, along with end-to-end digital operations and fintech support.
-                    </p>
 
-                    <!-- Contact Badge Grid -->
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="mailto:ma247808@gmail.com" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-cardBg border border-gray-700/60 text-sm font-medium hover:border-blue-500/50 hover:bg-gray-800 transition shadow-sm">
-                            <i class="fas fa-envelope text-blue-400"></i> ma247808@gmail.com
-                        </a>
-                        <a href="https://wa.me/917388379148" target="_blank" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-cardBg border border-gray-700/60 text-sm font-medium hover:border-emerald-500/50 hover:bg-gray-800 transition shadow-sm">
-                            <i class="fab fa-whatsapp text-emerald-400"></i> +91-7388379148
-                        </a>
-                        <a href="tel:+966569894779" class="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-cardBg border border-gray-700/60 text-sm font-medium hover:border-blue-500/50 hover:bg-gray-800 transition shadow-sm">
-                            <i class="fas fa-phone text-cyan-400"></i> (+966) 569894779
-                        </a>
+                    <!-- Interactive Badges Grid -->
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 font-mono"><i class="fas fa-bolt text-amber-400 mr-1.5"></i> CO2 & Fiber Laser</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 font-mono"><i class="fas fa-vector-square text-cyan-400 mr-1.5"></i> CorelDRAW Pro</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-300 font-mono"><i class="fas fa-cubes text-blue-400 mr-1.5"></i> Acrylic & Wood Engraving</span>
                     </div>
 
-                    <!-- Social Media Links Bar -->
-                    <div class="pt-4 border-t border-gray-800/80 flex flex-wrap items-center gap-3">
-                        <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold mr-2">Connect:</span>
-                        <a href="https://linkedin.com/asifshravasti/" target="_blank" class="w-10 h-10 rounded-xl bg-cardBg border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition shadow" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/asifshravastipage/" target="_blank" class="w-10 h-10 rounded-xl bg-cardBg border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition shadow" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/asifshravasti/" target="_blank" class="w-10 h-10 rounded-xl bg-cardBg border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition shadow" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.x.com/asifshravasti/" target="_blank" class="w-10 h-10 rounded-xl bg-cardBg border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gray-800 hover:border-gray-600 transition shadow" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.youtube.com/asifshravasti/" target="_blank" class="w-10 h-10 rounded-xl bg-cardBg border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-red-600 hover:border-red-600 transition shadow" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://asifshravasti.godaddysites.com/" target="_blank" class="w-10 h-10 rounded-xl bg-cardBg border border-gray-700 flex items-center justify-center text-gray-300 hover:text-white hover:bg-cyan-600 hover:border-cyan-600 transition shadow" title="GoDaddy Website"><i class="fas fa-globe"></i></a>
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#experience" class="px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-400 to-blue-500 text-black shadow-lg shadow-cyan-500/20 hover:scale-105 transition duration-300">
+                            Explore Work Experience
+                        </a>
+                        <button onclick="copyToClipboard('ma247808@gmail.com', 'Email Address Copied!')" class="px-6 py-3.5 rounded-xl font-semibold text-sm glass-card border border-white/10 hover:border-cyan-400/50 text-slate-200 transition duration-300 flex items-center gap-2">
+                            <i class="far fa-copy text-cyan-400"></i> Copy Contact Email
+                        </button>
                     </div>
-                </div>
 
-                <div class="lg:col-span-4 flex justify-center">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-2 bg-gradient-to-tr from-blue-500 to-cyan-400 shadow-2xl">
-                        <div class="w-full h-full rounded-2xl bg-cardBg overflow-hidden flex flex-col items-center justify-center p-6 text-center space-y-4 border border-gray-800">
-                            <div class="w-24 h-24 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-4xl text-blue-400 shadow-inner">
-                                <i class="fas fa-laser-pointer"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg text-white">Zikra Waad</h3>
-                                <p class="text-xs text-gray-400 mt-1">Riyadh, Saudi Arabia</p>
-                            </div>
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                Active Production
-                            </span>
+                    <!-- Stats Counter Bar -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-6">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">3+</div>
+                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">100+</div>
+                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Precision Projects</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">5+</div>
+                            <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold">Countries Explored</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Right Profile Showcase Frame -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md animate-float">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 to-blue-600 opacity-30 blur-xl"></div>
+                        <div class="relative glass-card rounded-3xl p-8 space-y-6 border border-white/10 text-center">
+                            
+                            <!-- Icon Display -->
+                            <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 border border-cyan-500/40 flex items-center justify-center text-4xl text-cyan-400 shadow-inner">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Zikra Waad Advertisement</h3>
+                                <p class="text-xs text-cyan-400 font-medium mt-1">Riyadh, Kingdom of Saudi Arabia</p>
+                            </div>
+
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Managing state-of-the-art laser machinery, vector optimization, laser calibration, and laser optics maintenance in Saudi Arabia's thriving advertisement sector.
+                            </p>
+
+                            <div class="pt-4 border-t border-white/5 flex items-center justify-around text-xs text-slate-300">
+                                <div><i class="fas fa-check-circle text-emerald-400 mr-1"></i> RDWorks</div>
+                                <div><i class="fas fa-check-circle text-emerald-400 mr-1"></i> EzCad2</div>
+                                <div><i class="fas fa-check-circle text-emerald-400 mr-1"></i> CorelDRAW</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Professional Summary Section -->
+        <!-- Professional Summary / About Section -->
         <section id="about" class="space-y-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-3 h-8 rounded-full bg-blue-500"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Professional Summary</h3>
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 rounded-full bg-cyan-400"></div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">About Me</h2>
             </div>
-            <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 sm:p-8 shadow-xl">
-                <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
-                    Experienced Graphic Designer and Skilled Laser Machine Operator with proven expertise in the signage, advertisement, and fintech support industries. Specializes in transforming vector concepts into high-precision physical outputs using <strong class="text-white">CorelDRAW</strong>, <strong class="text-white">RDWorks</strong>, and <strong class="text-white">EzCad2</strong>. Proficient in operating and maintaining CO2 and Fiber laser machinery for acrylic, wood, and metal custom fabrication. Adept at managing end-to-end production workflows, design vectorization, data operations, and technical support. Passionate explorer with extensive travel interests across domestic and international destinations.
+
+            <div class="glass-card rounded-3xl p-8 sm:p-10 space-y-4">
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    I am a dedicated <strong class="text-white">Graphic Designer and Precision Laser Machine Operator</strong> based in Riyadh, Saudi Arabia. With extensive expertise in vector graphics and industrial laser execution, I bridge creative digital layouts with physical manufacturing.
+                </p>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                    My core skillset centers on preparing flawless vector files using CorelDRAW and executing micro-precision laser cutting, engraving, and marking using RDWorks and EzCad2. From acrylic indoor signs to intricate wood engraving and metal surface etching, I oversee end-to-end production with an emphasis on optical calibration and zero downtime.
                 </p>
             </div>
         </section>
 
-        <!-- Core Competencies & Technical Skills -->
-        <section id="skills" class="space-y-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-3 h-8 rounded-full bg-cyan-400"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Core Competencies & Technical Skills</h3>
+        <!-- Core Competencies Section -->
+        <section id="skills" class="space-y-8">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 rounded-full bg-blue-500"></div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Core Competencies & Technical Skills</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
                 <!-- Skill Card 1 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-4 hover:border-blue-500/50 transition shadow-xl">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/20">
-                        <i class="fas fa-pen-nib"></i>
+                <div class="glass-card rounded-2xl p-6 space-y-4 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl group-hover:scale-110 transition">
+                        <i class="fas fa-laser"></i>
                     </div>
-                    <h4 class="font-bold text-lg text-white">Design & Vector Software</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-xs"></i> CorelDRAW (Advanced)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-xs"></i> Vector File Preparation</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-xs"></i> Promotional Banner Design</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-xs"></i> Digital Layouts & Signage</li>
+                    <h3 class="font-bold text-lg text-white">Laser & CNC Operations</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-cyan-400 text-[8px]"></i> CO2 & Fiber Laser Machines</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-cyan-400 text-[8px]"></i> RDWorks & EzCad2 Software</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-cyan-400 text-[8px]"></i> Laser Optics Maintenance</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-cyan-400 text-[8px]"></i> Beam Alignment & Calibration</li>
                     </ul>
                 </div>
 
                 <!-- Skill Card 2 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-4 hover:border-cyan-500/50 transition shadow-xl">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl border border-cyan-500/20">
-                        <i class="fas fa-cogs"></i>
+                <div class="glass-card rounded-2xl p-6 space-y-4 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl group-hover:scale-110 transition">
+                        <i class="fas fa-pen-tool"></i>
                     </div>
-                    <h4 class="font-bold text-lg text-white">Laser Machinery & Production</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400 text-xs"></i> CO2 & Fiber Laser Operation</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400 text-xs"></i> RDWorks & EzCad2</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400 text-xs"></i> Precision Cutting & Engraving</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400 text-xs"></i> Optics Maintenance & Calibration</li>
+                    <h3 class="font-bold text-lg text-white">Graphic & Vector Design</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-blue-400 text-[8px]"></i> CorelDRAW (Advanced)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-blue-400 text-[8px]"></i> Vector File Optimization</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-blue-400 text-[8px]"></i> Signage & 3D Letter Design</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-blue-400 text-[8px]"></i> Promotional Banners</li>
                     </ul>
                 </div>
 
                 <!-- Skill Card 3 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-4 hover:border-emerald-500/50 transition shadow-xl">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl border border-emerald-500/20">
-                        <i class="fas fa-cubes"></i>
+                <div class="glass-card rounded-2xl p-6 space-y-4 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl group-hover:scale-110 transition">
+                        <i class="fas fa-layer-group"></i>
                     </div>
-                    <h4 class="font-bold text-lg text-white">Materials Expertise</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Acrylic Sheet Fabrication</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Wood & MDF Engraving</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Transparent Plastics</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Metal Surface Etching</li>
+                    <h3 class="font-bold text-lg text-white">Materials Fabrication</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-emerald-400 text-[8px]"></i> Cast & Extruded Acrylic Sheets</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-emerald-400 text-[8px]"></i> Natural Wood & MDF Engraving</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-emerald-400 text-[8px]"></i> Transparent Polymers & Vinyl</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-emerald-400 text-[8px]"></i> Metal Surface Fiber Marking</li>
                     </ul>
                 </div>
 
                 <!-- Skill Card 4 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-4 hover:border-purple-500/50 transition shadow-xl">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl border border-purple-500/20">
-                        <i class="fas fa-laptop-code"></i>
+                <div class="glass-card rounded-2xl p-6 space-y-4 transition duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl group-hover:scale-110 transition">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h4 class="font-bold text-lg text-white">Technical & Office Tools</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-xs"></i> MS Office (Word, Excel, PPT)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-xs"></i> Google Docs & Workspace</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-xs"></i> Data Operations & Management</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-xs"></i> Technical IT Support</li>
+                    <h3 class="font-bold text-lg text-white">IT & Fintech Support</h3>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-amber-400 text-[8px]"></i> MS Office & Google Workspace</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-amber-400 text-[8px]"></i> Backend Data Operations</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-amber-400 text-[8px]"></i> Technical Support Management</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-circle-dot text-amber-400 text-[8px]"></i> Client Communication</li>
                     </ul>
                 </div>
+
             </div>
         </section>
 
-        <!-- Professional Experience Section -->
-        <section id="experience" class="space-y-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-3 h-8 rounded-full bg-blue-600"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Professional Experience</h3>
+        <!-- Professional Experience Timeline -->
+        <section id="experience" class="space-y-8">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 rounded-full bg-cyan-400"></div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Professional Experience</h2>
             </div>
 
-            <div class="space-y-6">
-                <!-- Job 1 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 sm:p-8 shadow-xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 px-4 py-2 bg-blue-500/10 text-blue-400 rounded-bl-2xl text-xs font-semibold border-b border-l border-blue-500/20">
-                        Current Role
-                    </div>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Graphic Designer & Laser Operator</h4>
-                            <p class="text-blue-400 font-medium">Zikra Waad Advertisement</p>
+            <div class="relative border-l-2 border-white/10 ml-4 sm:ml-8 space-y-12">
+                
+                <!-- Timeline Job 1 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-cyan-400 border-4 border-obsidian group-hover:scale-125 transition"></div>
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <span class="px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-[10px] font-mono uppercase">Current Role</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Graphic Designer & Laser Operator</h3>
+                                <p class="text-cyan-400 font-medium text-sm">Zikra Waad Advertisement</p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 w-fit">Riyadh, Saudi Arabia</span>
                         </div>
-                        <span class="text-sm text-gray-400 bg-gray-800/80 px-3 py-1 rounded-lg w-fit">Riyadh, Saudi Arabia</span>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-chevron-right text-cyan-400 text-xs mt-1"></i>
+                                Operating CO2 and Fiber laser machines to fabricate indoor/outdoor signage, promotional items, and display boards.
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-chevron-right text-cyan-400 text-xs mt-1"></i>
+                                Preparing precision vector artwork in CorelDRAW and controlling fabrication routines via RDWorks and EzCad2.
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-chevron-right text-cyan-400 text-xs mt-1"></i>
+                                Performing daily machine calibration, beam focus alignment, and optical mirror maintenance.
+                            </li>
+                        </ul>
                     </div>
-                    <p class="text-gray-300 text-sm mb-4">
-                        Operating CO2 and Fiber laser machines to fabricate custom signage, indoor/outdoor advertising material, and promotional items.
-                    </p>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-start gap-2.5">
-                            <i class="fas fa-arrow-right text-blue-400 mt-1"></i>
-                            Creating and optimizing high-precision vector design files using CorelDRAW.
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fas fa-arrow-right text-blue-400 mt-1"></i>
-                            Programming, exporting, and executing cutting/engraving tasks via RDWorks and EzCad2.
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fas fa-arrow-right text-blue-400 mt-1"></i>
-                            Performing routine optics cleaning, beam alignment, machine calibration, and daily operational maintenance to ensure minimal downtime and high cut quality.
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Job 2 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 sm:p-8 shadow-xl">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Support Manager</h4>
-                            <p class="text-cyan-400 font-medium">AS Pay Fintech Ltd.</p>
+                <!-- Timeline Job 2 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-blue-500 border-4 border-obsidian group-hover:scale-125 transition"></div>
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Support Manager</h3>
+                                <p class="text-blue-400 font-medium text-sm">AS Pay Fintech Ltd.</p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 w-fit">Lucknow, India</span>
                         </div>
-                        <span class="text-sm text-gray-400 bg-gray-800/80 px-3 py-1 rounded-lg w-fit">Lucknow, India</span>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-chevron-right text-blue-400 text-xs mt-1"></i>
+                                Designed promotional digital banners, social media graphics, and collateral for fintech products.
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-chevron-right text-blue-400 text-xs mt-1"></i>
+                                Oversaw merchant data operations and managed tier-2 client support workflows.
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-start gap-2.5">
-                            <i class="fas fa-arrow-right text-cyan-400 mt-1"></i>
-                            Designed promotional banners, social media assets, and digital marketing materials for fintech services.
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fas fa-arrow-right text-cyan-400 mt-1"></i>
-                            Managed day-to-day data operations and provided tier-2 technical support to merchants and users.
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Job 3 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 sm:p-8 shadow-xl">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Support Executive</h4>
-                            <p class="text-cyan-400 font-medium">Mitr Sewa Insurance And Fintech Pvt. Ltd.</p>
+                <!-- Timeline Job 3 -->
+                <div class="relative pl-8 sm:pl-10 group">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-slate-600 border-4 border-obsidian group-hover:scale-125 transition"></div>
+                    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Support Executive</h3>
+                                <p class="text-slate-400 font-medium text-sm">Mitr Sewa Insurance & Fintech Pvt. Ltd.</p>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 w-fit">Lucknow, India</span>
                         </div>
-                        <span class="text-sm text-gray-400 bg-gray-800/80 px-3 py-1 rounded-lg w-fit">Lucknow, India</span>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-chevron-right text-slate-400 text-xs mt-1"></i>
+                                Executed data entry, documentation verification, and backend operational management.
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-chevron-right text-slate-400 text-xs mt-1"></i>
+                                Provided phone and digital assistance to customers and insurance policy holders.
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-start gap-2.5">
-                            <i class="fas fa-arrow-right text-cyan-400 mt-1"></i>
-                            Handled core data entry, verified documentation, and executed back-end fintech operations.
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fas fa-arrow-right text-cyan-400 mt-1"></i>
-                            Provided prompt client technical support and resolved customer queries.
-                        </li>
-                    </ul>
                 </div>
+
             </div>
         </section>
 
-        <!-- Education & Certifications -->
-        <section id="education" class="space-y-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-3 h-8 rounded-full bg-emerald-500"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Education & Certifications</h3>
+        <!-- Education & Certifications Section -->
+        <section id="education" class="space-y-8">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 rounded-full bg-emerald-400"></div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Education & Qualifications</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Edu 1 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-3 shadow-xl">
-                    <span class="text-xs font-semibold text-emerald-400 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">Diploma</span>
-                    <h4 class="text-lg font-bold text-white">Computer Science & Engineering</h4>
-                    <p class="text-sm text-gray-400">Mahamaya Polytechnic of Information Technology, Shravasti, UP, India</p>
+                
+                <div class="glass-card rounded-2xl p-6 space-y-3">
+                    <span class="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Diploma</span>
+                    <h3 class="text-lg font-bold text-white">Computer Science & Engineering</h3>
+                    <p class="text-xs text-slate-400">Mahamaya Polytechnic of Information Technology, Shravasti, Uttar Pradesh, India</p>
                 </div>
 
-                <!-- Edu 2 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-3 shadow-xl">
-                    <span class="text-xs font-semibold text-blue-400 px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/20">Certification (2024)</span>
-                    <h4 class="text-lg font-bold text-white">CorelDRAW Professional Certification</h4>
-                    <p class="text-sm text-gray-400">STP Computer Education, New Delhi (Online Mode)</p>
+                <div class="glass-card rounded-2xl p-6 space-y-3">
+                    <span class="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Certification (2024)</span>
+                    <h3 class="text-lg font-bold text-white">CorelDRAW Professional Certification</h3>
+                    <p class="text-xs text-slate-400">STP Computer Education, New Delhi (Online Professional Module)</p>
                 </div>
 
-                <!-- Edu 3 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-3 shadow-xl">
-                    <span class="text-xs font-semibold text-purple-400 px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/20">Intermediate (12th)</span>
-                    <h4 class="text-lg font-bold text-white">UP Board Education</h4>
-                    <p class="text-sm text-gray-400">Govt. Highschool Shravasti, Uttar Pradesh, India</p>
+                <div class="glass-card rounded-2xl p-6 space-y-3">
+                    <span class="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Intermediate (12th Grade)</span>
+                    <h3 class="text-lg font-bold text-white">UP Board Highschool Education</h3>
+                    <p class="text-xs text-slate-400">Govt. Highschool Shravasti, Uttar Pradesh, India</p>
                 </div>
 
-                <!-- Edu 4 -->
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 space-y-3 shadow-xl">
-                    <span class="text-xs font-semibold text-purple-400 px-2.5 py-1 rounded-md bg-purple-500/10 border border-purple-500/20">High School (10th)</span>
-                    <h4 class="text-lg font-bold text-white">UP Board Education</h4>
-                    <p class="text-sm text-gray-400">Shri Alakshendra Inter College, Bhinga, Shravasti, UP, India</p>
+                <div class="glass-card rounded-2xl p-6 space-y-3">
+                    <span class="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">High School (10th Grade)</span>
+                    <h3 class="text-lg font-bold text-white">UP Board Highschool Education</h3>
+                    <p class="text-xs text-slate-400">Shri Alakshendra Inter College, Bhinga, Shravasti, Uttar Pradesh, India</p>
                 </div>
+
             </div>
         </section>
 
-        <!-- Travel & Languages Section -->
-        <section id="travel" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <!-- Travel Destinations -->
-            <div class="lg:col-span-8 space-y-6">
-                <div class="flex items-center space-x-3">
-                    <div class="w-3 h-8 rounded-full bg-amber-500"></div>
-                    <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Travel & Exploration Interests</h3>
+        <!-- Travel & Exploration Section -->
+        <section id="travel" class="space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-2 h-8 rounded-full bg-amber-400"></div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Travel & Exploration</h2>
                 </div>
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 sm:p-8 space-y-6 shadow-xl">
-                    <div>
-                        <h4 class="text-sm font-semibold text-amber-400 uppercase tracking-wider mb-3"><i class="fas fa-map-marked-alt mr-2"></i> Domestic Regions</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Kashmir</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Himachal Pradesh</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Leh</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Rajasthan</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Gujarat</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Maharashtra</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Madhya Pradesh</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Delhi</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Uttar Pradesh</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">Bihar</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">South India</span>
-                            <span class="px-3 py-1 rounded-lg bg-gray-800 text-gray-300 text-xs font-medium border border-gray-700">North East India</span>
-                        </div>
-                    </div>
 
-                    <div class="pt-4 border-t border-gray-800">
-                        <h4 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3"><i class="fas fa-globe-americas mr-2"></i> International Destinations</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20">Saudi Arabia</span>
-                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20">Dubai</span>
-                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20">Malaysia</span>
-                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20">Bhutan</span>
-                            <span class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 text-xs font-medium border border-blue-500/20">Nepal</span>
-                        </div>
-                    </div>
+                <!-- Filter Tabs -->
+                <div class="flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-xl border border-white/10 w-fit">
+                    <button onclick="filterTravel('all')" id="tab-all" class="travel-tab px-4 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500 text-black transition">All</button>
+                    <button onclick="filterTravel('domestic')" id="tab-domestic" class="travel-tab px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition">Domestic</button>
+                    <button onclick="filterTravel('international')" id="tab-international" class="travel-tab px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition">International</button>
                 </div>
             </div>
 
-            <!-- Languages Known -->
-            <div class="lg:col-span-4 space-y-6">
-                <div class="flex items-center space-x-3">
-                    <div class="w-3 h-8 rounded-full bg-pink-500"></div>
-                    <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Languages</h3>
+            <!-- Destinations Grid -->
+            <div id="travel-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                
+                <!-- Domestic -->
+                <div class="travel-card domestic glass-card rounded-xl p-4 text-center space-y-2">
+                    <i class="fas fa-mountain text-amber-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Kashmir</div>
+                    <span class="text-[9px] text-slate-400 uppercase font-mono">India</span>
                 </div>
-                <div class="rounded-2xl bg-cardBg border border-gray-800 p-6 sm:p-8 space-y-4 shadow-xl">
-                    <div class="flex items-center justify-between p-3 rounded-xl bg-gray-800/50 border border-gray-700/50">
-                        <span class="font-medium text-white">Hindi</span>
-                        <span class="text-xs text-pink-400 font-semibold bg-pink-500/10 px-2.5 py-1 rounded-md">Native</span>
-                    </div>
-                    <div class="flex items-center justify-between p-3 rounded-xl bg-gray-800/50 border border-gray-700/50">
-                        <span class="font-medium text-white">English</span>
-                        <span class="text-xs text-blue-400 font-semibold bg-blue-500/10 px-2.5 py-1 rounded-md">Professional</span>
-                    </div>
-                    <div class="flex items-center justify-between p-3 rounded-xl bg-gray-800/50 border border-gray-700/50">
-                        <span class="font-medium text-white">Urdu</span>
-                        <span class="text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-2.5 py-1 rounded-md">Fluent</span>
-                    </div>
-                    <div class="flex items-center justify-between p-3 rounded-xl bg-gray-800/50 border border-gray-700/50">
-                        <span class="font-medium text-white">Arabic</span>
-                        <span class="text-xs text-amber-400 font-semibold bg-amber-500/10 px-2.5 py-1 rounded-md">Basic / A1</span>
-                    </div>
+                <div class="travel-card domestic glass-card rounded-xl p-4 text-center space-y-2">
+                    <i class="fas fa-tree text-amber-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Himachal</div>
+                    <span class="text-[9px] text-slate-400 uppercase font-mono">India</span>
                 </div>
+                <div class="travel-card domestic glass-card rounded-xl p-4 text-center space-y-2">
+                    <i class="fas fa-motorcycle text-amber-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Leh Ladakh</div>
+                    <span class="text-[9px] text-slate-400 uppercase font-mono">India</span>
+                </div>
+                <div class="travel-card domestic glass-card rounded-xl p-4 text-center space-y-2">
+                    <i class="fas fa-monument text-amber-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Rajasthan</div>
+                    <span class="text-[9px] text-slate-400 uppercase font-mono">India</span>
+                </div>
+                <div class="travel-card domestic glass-card rounded-xl p-4 text-center space-y-2">
+                    <i class="fas fa-compass text-amber-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Gujarat</div>
+                    <span class="text-[9px] text-slate-400 uppercase font-mono">India</span>
+                </div>
+                <div class="travel-card domestic glass-card rounded-xl p-4 text-center space-y-2">
+                    <i class="fas fa-city text-amber-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Maharashtra</div>
+                    <span class="text-[9px] text-slate-400 uppercase font-mono">India</span>
+                </div>
+
+                <!-- International -->
+                <div class="travel-card international glass-card rounded-xl p-4 text-center space-y-2 border-cyan-500/30">
+                    <i class="fas fa-kaaba text-cyan-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Saudi Arabia</div>
+                    <span class="text-[9px] text-cyan-400 uppercase font-mono">International</span>
+                </div>
+                <div class="travel-card international glass-card rounded-xl p-4 text-center space-y-2 border-cyan-500/30">
+                    <i class="fas fa-building text-cyan-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Dubai</div>
+                    <span class="text-[9px] text-cyan-400 uppercase font-mono">UAE</span>
+                </div>
+                <div class="travel-card international glass-card rounded-xl p-4 text-center space-y-2 border-cyan-500/30">
+                    <i class="fas fa-plane text-cyan-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Malaysia</div>
+                    <span class="text-[9px] text-cyan-400 uppercase font-mono">Southeast Asia</span>
+                </div>
+                <div class="travel-card international glass-card rounded-xl p-4 text-center space-y-2 border-cyan-500/30">
+                    <i class="fas fa-dharmachakra text-cyan-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Bhutan</div>
+                    <span class="text-[9px] text-cyan-400 uppercase font-mono">Himalayas</span>
+                </div>
+                <div class="travel-card international glass-card rounded-xl p-4 text-center space-y-2 border-cyan-500/30">
+                    <i class="fas fa-vihara text-cyan-400 text-xl"></i>
+                    <div class="text-xs font-bold text-white">Nepal</div>
+                    <span class="text-[9px] text-cyan-400 uppercase font-mono">Himalayas</span>
+                </div>
+
             </div>
         </section>
 
-        <!-- GitHub README Source Code Generator Section -->
-        <section id="github-generator" class="space-y-6 pt-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-3 h-8 rounded-full bg-purple-500"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">GitHub Profile README Source Code</h3>
-            </div>
-            <p class="text-gray-400 text-sm">
-                Copy this clean Markdown code snippet below to set up your professional GitHub profile repository README (`README.md`).
-            </p>
-
-            <div class="rounded-2xl bg-cardBg border border-gray-800 overflow-hidden shadow-2xl">
-                <!-- Toolbar -->
-                <div class="bg-[#101726] px-6 py-4 border-b border-gray-800 flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                        <span class="text-xs font-mono text-gray-400 ml-2">README.md</span>
-                    </div>
-                    <button id="copy-btn" onclick="copyReadmeCode()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition shadow-lg shadow-blue-600/30">
-                        <i class="fas fa-copy"></i> Copy Markdown Code
-                    </button>
-                </div>
-
-                <!-- Code Container -->
-                <div class="p-6 overflow-x-auto bg-[#080c14]">
-                    <pre id="readme-code" class="font-mono text-xs sm:text-sm text-gray-300 leading-relaxed">
-&lt;div align="center"&gt;
-  &lt;h1&gt;👋 Hi, I'm Mo Asif Khan&lt;/h1&gt;
-  &lt;p&gt;&lt;b&gt;Graphic Designer &amp; Precision Laser Machine Operator&lt;/b&gt;&lt;/p&gt;
-  &lt;p&gt;📍 Riyadh, Saudi Arabia | ✉️ ma247808@gmail.com | 📱 WhatsApp: +91-7388379148&lt;/p&gt;
-  
-  &lt;p&gt;
-    &lt;a href="https://linkedin.com/asifshravasti/"&gt;&lt;img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&amp;logo=linkedin&amp;logoColor=white"&gt;&lt;/a&gt;
-    &lt;a href="https://www.facebook.com/asifshravastipage/"&gt;&lt;img src="https://img.shields.io/badge/Facebook-1877F2?style=flat&amp;logo=facebook&amp;logoColor=white"&gt;&lt;/a&gt;
-    &lt;a href="https://www.instagram.com/asifshravasti/"&gt;&lt;img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&amp;logo=instagram&amp;logoColor=white"&gt;&lt;/a&gt;
-    &lt;a href="https://www.x.com/asifshravasti/"&gt;&lt;img src="https://img.shields.io/badge/X-%23000000.svg?style=flat&amp;logo=X&amp;logoColor=white"&gt;&lt;/a&gt;
-    &lt;a href="https://www.youtube.com/asifshravasti/"&gt;&lt;img src="https://img.shields.io/badge/YouTube-FF0000?style=flat&amp;logo=youtube&amp;logoColor=white"&gt;&lt;/a&gt;
-    &lt;a href="https://asifshravasti.godaddysites.com/"&gt;&lt;img src="https://img.shields.io/badge/Website-00A4EF?style=flat&amp;logo=godaddy&amp;logoColor=white"&gt;&lt;/a&gt;
-  &lt;/p&gt;
-&lt;/div&gt;
-
----
-
-### 👨‍💻 Professional Summary
-Experienced Graphic Designer and Skilled Laser Machine Operator with proven expertise in the signage, advertisement, and fintech support industries. Specializes in transforming vector concepts into high-precision physical outputs using **CorelDRAW**, **RDWorks**, and **EzCad2**. Proficient in operating and maintaining CO2 and Fiber laser machinery for acrylic, wood, and metal custom fabrication.
-
----
-
-### 🛠️ Core Competencies & Technical Skills
-* **Design & Vector Software:** CorelDRAW (Advanced), Vector File Preparation, Promotional Banner Design
-* **Laser Machinery & Production:** CO2 Laser, Fiber Laser, Precision Cutting & Engraving, RDWorks, EzCad2, Machine Calibration
-* **Materials Expertise:** Acrylic, Wood, Transparent Plastics, and Metal Engraving
-* **Technical & Office Tools:** MS Office (PowerPoint, Excel, Word), Google Docs, Data Operations, IT Support
-
----
-
-### 💼 Professional Experience
-* **Graphic Designer & Laser Operator** | *Zikra Waad Advertisement — Riyadh, Saudi Arabia*
-  * Operating CO2 and Fiber laser machines for custom signage and promotional items.
-  * Creating vector designs via CorelDRAW and executing production via RDWorks/EzCad2.
-  * Performing routine optical alignment and machine calibration.
-* **Support Manager** | *AS Pay Fintech Ltd. — Lucknow, India*
-  * Designed promotional banners and managed digital marketing materials.
-  * Managed data operations and provided technical support.
-* **Support Executive** | *Mitr Sewa Insurance And Fintech Pvt. Ltd. — Lucknow, India*
-  * Handled backend data verification and client technical support.
-
----
-
-### 🎓 Education
-* **Diploma in Computer Science & Engineering** — Mahamaya Polytechnic of Information Technology, Shravasti, UP, India
-* **CorelDRAW Professional Certification (2024)** — STP Computer Education, New Delhi
-* **Intermediate (12th Grade)** — Govt. Highschool Shravasti, UP Board, India
-* **High School (10th Grade)** — Shri Alakshendra Inter College, Bhinga, Shravasti, UP, India
-
----
-
-### ✈️ Travel & Exploration Interests
-* **Domestic:** Kashmir, Himachal Pradesh, Leh, Rajasthan, Gujarat, Maharashtra, Madhya Pradesh, Delhi, Uttar Pradesh, Bihar, South India, North East India.
-* **International:** Saudi Arabia, Dubai, Malaysia, Bhutan, Nepal.
-
----
-
-### 🌍 Languages Known
-* **Hindi** (Native) | **English** (Professional) | **Urdu** (Fluent) | **Arabic** (Basic / A1)
-                    </pre>
+        <!-- Languages & Contact Footer Section -->
+        <section id="contact" class="space-y-12 pt-8">
+            
+            <!-- Language Bar -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <span class="text-xs uppercase font-mono text-slate-400 tracking-wider">Languages Spoken:</span>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-white">Hindi <span class="text-[10px] text-slate-400 font-normal">(Native)</span></span>
+                    <span class="px-4 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-white">English <span class="text-[10px] text-slate-400 font-normal">(Professional)</span></span>
+                    <span class="px-4 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-white">Urdu <span class="text-[10px] text-slate-400 font-normal">(Fluent)</span></span>
+                    <span class="px-4 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-white">Arabic <span class="text-[10px] text-slate-400 font-normal">(Basic A1)</span></span>
                 </div>
             </div>
+
+            <!-- Direct Contact Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div onclick="copyToClipboard('ma247808@gmail.com', 'Primary Email Copied!')" class="glass-card rounded-2xl p-6 space-y-3 cursor-pointer hover:border-cyan-500/50 transition">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg"><i class="fas fa-envelope"></i></div>
+                    <div class="text-xs text-slate-400 font-mono uppercase">Primary Email</div>
+                    <div class="text-sm font-bold text-white hover:text-cyan-400 transition">ma247808@gmail.com</div>
+                </div>
+
+                <div onclick="copyToClipboard('+966569894779', 'Saudi Phone Copied!')" class="glass-card rounded-2xl p-6 space-y-3 cursor-pointer hover:border-cyan-500/50 transition">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg"><i class="fas fa-phone"></i></div>
+                    <div class="text-xs text-slate-400 font-mono uppercase">Saudi Arabia Call / WhatsApp</div>
+                    <div class="text-sm font-bold text-white hover:text-cyan-400 transition">+966 569894779</div>
+                </div>
+
+                <div onclick="copyToClipboard('+917388379148', 'India WhatsApp Copied!')" class="glass-card rounded-2xl p-6 space-y-3 cursor-pointer hover:border-cyan-500/50 transition">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg"><i class="fab fa-whatsapp"></i></div>
+                    <div class="text-xs text-slate-400 font-mono uppercase">India WhatsApp</div>
+                    <div class="text-sm font-bold text-white hover:text-cyan-400 transition">+91 7388379148</div>
+                </div>
+
+            </div>
+
+            <!-- Social Media Icon Matrix -->
+            <div class="glass-card rounded-3xl p-8 text-center space-y-6">
+                <h3 class="text-xl font-bold text-white">Connect With Me Across Platforms</h3>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="https://linkedin.com/asifshravasti" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-lg text-slate-300 hover:text-white hover:bg-blue-600 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/asifshravastipage/" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-lg text-slate-300 hover:text-white hover:bg-blue-600 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/asifshravasti/" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-lg text-slate-300 hover:text-white hover:bg-pink-600 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.x.com/asifshravasti" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-lg text-slate-300 hover:text-white hover:bg-slate-800 transition duration-300"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/asifshravasti" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-lg text-slate-300 hover:text-white hover:bg-red-600 transition duration-300"><i class="fab fa-youtube"></i></a>
+                    <a href="https://asifshravasti.godaddysites.com/" target="_blank" class="w-12 h-12 rounded-2xl glass-card flex items-center justify-center text-lg text-slate-300 hover:text-white hover:bg-cyan-600 transition duration-300"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="mt-20 border-t border-gray-800 bg-[#080c14] py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
-            <p>© 2026 Mo Asif Khan. All rights reserved. Designed for excellence in Riyadh, Saudi Arabia.</p>
-        </div>
+    <footer class="border-t border-white/5 bg-obsidian/90 py-8 text-center text-xs text-slate-500">
+        <p>© 2026 Mo Asif Khan. All Rights Reserved. Crafted with precision in Riyadh, Saudi Arabia.</p>
     </footer>
 
-    <!-- JavaScript Interactions -->
+    <!-- Toast Notification Box -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 px-5 py-3 rounded-xl bg-cyan-500 text-black font-bold text-xs shadow-xl flex items-center gap-2">
+        <i class="fas fa-check-circle"></i> <span id="toast-msg">Copied!</span>
+    </div>
+
+    <!-- JavaScript Interactive Logic -->
     <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        menuBtn.addEventListener('click', () => {
+        menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Copy README Code Function
-        function copyReadmeCode() {
-            const codeElem = document.getElementById('readme-code');
-            const textToCopy = codeElem.innerText;
-            
-            // Using execCommand fallback for iFrame sandbox compatibility
-            const textarea = document.createElement('textarea');
-            textarea.value = textToCopy;
-            document.body.appendChild(textarea);
-            textarea.select();
+        // Clipboard Copy Toast Function
+        function copyToClipboard(text, message) {
+            const temp = document.createElement('textarea');
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
             try {
                 document.execCommand('copy');
-                const btn = document.getElementById('copy-btn');
-                btn.innerHTML = '<i class="fas fa-check"></i> Copied successfully!';
-                btn.classList.remove('bg-blue-600', 'hover:bg-blue-500');
-                btn.classList.add('bg-emerald-600');
-                setTimeout(() => {
-                    btn.innerHTML = '<i class="fas fa-copy"></i> Copy Markdown Code';
-                    btn.classList.remove('bg-emerald-600');
-                    btn.classList.add('bg-blue-600', 'hover:bg-blue-500');
-                }, 2500);
+                showToast(message || 'Copied to clipboard!');
             } catch (err) {
-                console.error('Failed to copy text: ', err);
+                console.error('Failed to copy', err);
             }
-            document.body.removeChild(textarea);
+            document.body.removeChild(temp);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Travel Filter Function
+        function filterTravel(category) {
+            const cards = document.querySelectorAll('.travel-card');
+            const tabs = document.querySelectorAll('.travel-tab');
+
+            // Reset tab highlights
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-cyan-500', 'text-black');
+                tab.classList.add('text-slate-400');
+            });
+
+            // Highlight selected tab
+            const activeTab = document.getElementById('tab-' + category);
+            if (activeTab) {
+                activeTab.classList.add('bg-cyan-500', 'text-black');
+                activeTab.classList.remove('text-slate-400');
+            }
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else if (card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
     </script>
 </body>
